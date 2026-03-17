@@ -79,65 +79,70 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-green-900/40 via-transparent to-green-900/60" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white flex justify-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl text-center flex flex-col items-center"
+            className="flex flex-col items-start text-white -mt-20"
           >
             <span className="inline-block py-1 px-4 rounded-full bg-green-500/20 border border-green-400/30 text-green-300 text-xs font-bold uppercase tracking-widest mb-8">
               MSP TECHNOLOGY & CONSTRUCTION
             </span>
-            <h1 className="text-6xl md:text-8xl font-bold leading-[1.1] mb-12 tracking-tight">
+            <h1 className="text-6xl md:text-8xl font-bold leading-[1.1] mb-12 tracking-tight text-left uppercase">
               Minh bạch <br />
               <span className="text-green-400">Sáng tạo</span> <br />
               Phát triển
             </h1>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link 
-                to="/cong-trinh" 
-                className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all shadow-2xl hover:shadow-green-500/40 hover:-translate-y-1"
-              >
-                Xem dự án tiêu biểu <ArrowRight className="ml-2" size={20} />
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-6">
               <Link 
                 to="/gioi-thieu" 
-                className="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all hover:-translate-y-1"
+                className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all shadow-2xl hover:shadow-green-500/40 hover:-translate-y-1"
               >
                 Về chúng tôi
               </Link>
+              <a 
+                href="tel:02432020239" 
+                className="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all hover:-translate-y-1"
+              >
+                Liên hệ ngay
+              </a>
             </div>
           </motion.div>
         </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="relative z-20 -mt-24 max-w-7xl mx-auto px-4 pb-12">
-        <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.1)] border border-slate-100 p-8 md:p-16 grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
-          {stats.map((stat, idx) => (
-            <motion.div 
-              key={idx} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="text-center space-y-4 group"
-            >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-green-50 text-green-600 mb-2 transition-transform group-hover:scale-110 group-hover:rotate-6 duration-300">
-                <stat.icon size={32} />
-              </div>
-              <div className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-                <CountUp to={stat.value} />{stat.suffix}
-              </div>
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] leading-relaxed px-4">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
+        {/* Floating Stats Card */}
+        <div className="absolute left-0 right-0 -bottom-24 z-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-[3rem] shadow-[0_30px_70px_rgba(0,0,0,0.08)] border border-slate-100/50 p-10 md:p-14 grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {stats.map((stat, idx) => (
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="text-center space-y-3 group"
+                >
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-green-50 text-green-600 mb-1 transition-transform group-hover:scale-110 duration-300">
+                    <stat.icon size={28} />
+                  </div>
+                  <div className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+                    <CountUp to={stat.value} />{stat.suffix}
+                  </div>
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.15em] leading-relaxed">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Spacing for floating card */}
+      <div className="h-32 bg-slate-50" />
 
       {/* Core Values */}
       <section className="py-24 bg-slate-50">

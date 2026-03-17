@@ -42,14 +42,23 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="pb-24">
+    <div>
       {/* Header */}
-      <section className="bg-slate-900 py-24 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=2070"
+            alt="Services Background"
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-slate-900/80" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6 text-green-400"
           >
             Sản phẩm & Dịch vụ
           </motion.h1>
@@ -57,7 +66,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-400 max-w-3xl mx-auto"
+            className="text-xl text-slate-300 max-w-3xl mx-auto"
           >
             Giải pháp toàn diện cho mọi nhu cầu về công nghệ và xây lắp kỹ thuật.
           </motion.p>
@@ -117,7 +126,7 @@ export default function Services() {
               <div key={idx} className="relative">
                 <div className="text-6xl font-black text-white/10 mb-4">{item.step}</div>
                 <h4 className="text-xl font-bold mb-3">{item.title}</h4>
-                <p className="text-blue-100 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-green-50 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

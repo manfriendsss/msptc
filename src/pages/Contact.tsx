@@ -103,9 +103,9 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-slate-50 p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+              <div className="bg-slate-50 p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm h-full flex flex-col">
                 <h2 className="text-2xl font-bold text-slate-900 mb-8">Gửi tin nhắn cho chúng tôi</h2>
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-700 ml-1">Họ và tên *</label>
                     <input 
@@ -140,12 +140,11 @@ export default function Contact() {
                       <option>Khác</option>
                     </select>
                   </div>
-                  <div className="space-y-2 md:col-span-2">
+                  <div className="space-y-2 md:col-span-2 flex-grow flex flex-col">
                     <label className="text-sm font-bold text-slate-700 ml-1">Nội dung tin nhắn *</label>
                     <textarea 
-                      rows={5}
                       placeholder="Nhập nội dung tin nhắn của bạn..."
-                      className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all bg-white resize-none"
+                      className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all bg-white resize-none flex-grow min-h-[150px]"
                     ></textarea>
                   </div>
                   <div className="md:col-span-2 pt-4">

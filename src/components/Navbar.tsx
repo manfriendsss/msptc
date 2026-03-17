@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'motion/react';
 const navLinks = [
   { name: 'Trang chủ', path: '/' },
   { name: 'Giới thiệu', path: '/gioi-thieu' },
-  { name: 'Công trình', path: '/cong-trinh' },
   { name: 'Dịch vụ', path: '/dich-vu' },
   { name: 'Đối tác', path: '/doi-tac' },
   { name: 'Tin tức', path: '/tin-tuc' },
@@ -33,17 +32,16 @@ export default function Navbar() {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
+        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-5' : 'bg-transparent py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="https://api.studio.google.com/v1/projects/faxzkpxpghn737xqyx426s/files/input_file_0.png" 
+              src="/logoMSP.png" 
               alt="MSP Logo" 
-              className="h-12 w-auto"
-              referrerPolicy="no-referrer"
+              className="h-14 w-auto"
             />
             <div className="flex flex-col border-l border-slate-200 pl-3">
               <span className={`font-bold text-xl tracking-tight ${scrolled ? 'text-green-900' : 'text-green-700'}`}>MSP</span>
@@ -57,19 +55,14 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-green-600 ${
-                  location.pathname === link.path ? 'text-green-600' : 'text-slate-600'
+                className={`text-base font-semibold transition-colors hover:text-green-600 ${
+                  location.pathname === link.path ? 'text-green-600' : (scrolled ? 'text-slate-700' : 'text-slate-800')
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Link 
-              to="/lien-he" 
-              className="bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-green-700 transition-all shadow-md hover:shadow-lg active:scale-95"
-            >
-              Yêu cầu tư vấn
-            </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -106,14 +99,7 @@ export default function Navbar() {
                   <ChevronRight size={16} className="text-slate-300" />
                 </Link>
               ))}
-              <div className="pt-4 px-3">
-                <Link 
-                  to="/lien-he" 
-                  className="block w-full bg-green-600 text-white text-center py-4 rounded-xl font-bold shadow-lg"
-                >
-                  Yêu cầu tư vấn
-                </Link>
-              </div>
+
             </div>
           </motion.div>
         )}

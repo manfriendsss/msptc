@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { Target, Eye, Heart, ShieldCheck, Users2, Lightbulb } from 'lucide-react';
 
 const values = [
@@ -20,6 +21,13 @@ const values = [
 ];
 
 export default function About() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-120, 120]);
+
   return (
     <div className="pb-24">
       {/* Header */}
@@ -36,7 +44,7 @@ export default function About() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6 text-green-400"
           >
             Giới thiệu về MSP
           </motion.h1>
@@ -52,7 +60,7 @@ export default function About() {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white" ref={containerRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
             <div className="space-y-8">
@@ -64,22 +72,24 @@ export default function About() {
                   Công ty CP công nghệ và xây lắp MSP được thành lập bởi các thành viên có bề dày kinh nghiệm trong chuyên môn và quản lý. Với niềm đam mê và sáng tạo cùng sự tin tưởng, hợp tác của các đối tác và khách hàng, chúng tôi mong muốn xây dựng lên một tổ chức hoạt động có quy trình đồng bộ và hiệu quả, bền vững trong tương lai.
                 </p>
                 <p>
-                  Với phương châm hoạt động: <strong>MINH BẠCH – SÁNG TẠO – PHÁT TRIỂN</strong>. MSP hướng tới mục tiêu: làm hài lòng khách hàng khi sử dụng sản phẩm và dịch của công ty; đáp ứng sự mong muốn cả về vật chất và tinh thần của các thành viên công ty.
+                  Với phương châm: <span className="text-green-600 font-bold whitespace-nowrap">MINH BẠCH – SÁNG TẠO – PHÁT TRIỂN</span>.<br />
+                  MSP hướng tới mục tiêu: làm hài lòng khách hàng khi sử dụng sản phẩm và dịch của công ty; đáp ứng sự mong muốn cả về vật chất và tinh thần của các thành viên công ty.
                 </p>
                 <p>
                   Lựa chọn lĩnh vực hoạt động tư vấn giải pháp, cung cấp sản phẩm và thi công lắp đặt các hệ thống kĩ thuật, công nghệ trong các công trình xây dựng, MSP sẽ là cầu nối đưa các giải pháp công nghệ tiên tiến, kinh tế góp phần hoàn thiện các công trình xây dựng đảm bảo tiến độ, chất lượng và hiệu quả cao nhất.
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <img 
+            <div className="relative h-full overflow-hidden rounded-3xl shadow-2xl bg-slate-100">
+              <motion.img 
+                style={{ y, scale: 1.5 }}
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2070" 
                 alt="Construction Team" 
-                className="rounded-3xl shadow-2xl"
+                className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-600/10 rounded-full blur-3xl" />
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-green-600/10 rounded-full blur-3xl" />
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-600/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-green-600/10 rounded-full blur-3xl pointer-events-none" />
             </div>
           </div>
 

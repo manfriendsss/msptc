@@ -8,16 +8,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3 text-white">
               <img 
-                src="https://api.studio.google.com/v1/projects/faxzkpxpghn737xqyx426s/files/input_file_0.png" 
+                src="/logoMSP.png" 
                 alt="MSP Logo" 
-                className="h-10 w-auto brightness-0 invert"
-                referrerPolicy="no-referrer"
+                className="h-12 w-auto brightness-0 invert"
               />
-              <div className="flex flex-col">
-                <span className="font-bold text-xl tracking-tight text-white">MSP</span>
-                <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Technology & Construction</span>
+              <div className="flex flex-col border-l border-slate-700 pl-3">
+                <span className="font-bold text-xl tracking-tight text-white uppercase">MSP</span>
+                <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold leading-tight">Technology & <br/>Construction</span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -41,7 +40,6 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Liên kết nhanh</h3>
             <ul className="space-y-4 text-sm">
               <li><Link to="/gioi-thieu" className="hover:text-green-400 transition-colors">Về chúng tôi</Link></li>
-              <li><Link to="/cong-trinh" className="hover:text-green-400 transition-colors">Công trình tiêu biểu</Link></li>
               <li><Link to="/dich-vu" className="hover:text-green-400 transition-colors">Sản phẩm & Dịch vụ</Link></li>
               <li><Link to="/doi-tac" className="hover:text-green-400 transition-colors">Đối tác chiến lược</Link></li>
               <li><Link to="/tin-tuc" className="hover:text-green-400 transition-colors">Tin tức & Sự kiện</Link></li>
@@ -82,11 +80,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 space-y-4 md:space-y-0">
           <p>© 2026 MSP Technology & Construction. All rights reserved.</p>
-          <div className="flex space-x-6">
-            <a href="#" className="hover:text-slate-300">Chính sách bảo mật</a>
-            <a href="#" className="hover:text-slate-300">Điều khoản sử dụng</a>
-            <a href="#" className="hover:text-slate-300">Sitemap</a>
-          </div>
+
         </div>
       </div>
     </footer>
