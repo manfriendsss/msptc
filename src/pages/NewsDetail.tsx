@@ -1,6 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin, X } from 'lucide-react';
 
 const newsItems = [
   {
@@ -361,6 +362,47 @@ const newsItems = [
 export default function NewsDetail() {
   const { id } = useParams();
   const article = newsItems.find(item => item.id === id);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!selectedImage) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
+
+  useEffect(() => {
+    const container = contentRef.current;
+    if (!container) {
+      return;
+    }
+
+    const images = Array.from(container.querySelectorAll('img'));
+    const cleanupFns = images.map((image) => {
+      image.classList.add('cursor-zoom-in', 'transition-transform', 'duration-300', 'hover:scale-[1.01]');
+
+      const handleClick = () => {
+        setSelectedImage({
+          src: image.getAttribute('src') || '',
+          alt: image.getAttribute('alt') || article?.title || 'Article image',
+        });
+      };
+
+      image.addEventListener('click', handleClick);
+      return () => image.removeEventListener('click', handleClick);
+    });
+
+    return () => cleanupFns.forEach((cleanup) => cleanup());
+  }, [article]);
 
   if (!article) {
     return (
@@ -411,7 +453,8 @@ export default function NewsDetail() {
           <img 
             src={article.image} 
             alt={article.title} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover cursor-zoom-in"
+            onClick={() => setSelectedImage({ src: article.image, alt: article.title })}
           />
         </motion.div>
       </div>
@@ -422,6 +465,7 @@ export default function NewsDetail() {
           {/* Article Content */}
           <div className="flex-grow">
             <div 
+              ref={contentRef}
               className="prose prose-slate prose-lg max-w-none text-slate-700 pb-16"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
@@ -464,6 +508,37 @@ export default function NewsDetail() {
           </div>
         </div>
       </div>
+
+      {selectedImage && (
+        <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn">
+          <button
+            type="button"
+            className="absolute inset-0 bg-slate-950/85 backdrop-blur-sm"
+            aria-label="Đóng ảnh phóng to"
+            onClick={() => setSelectedImage(null)}
+          />
+          <div className="relative z-10 w-full max-w-6xl">
+            <button
+              type="button"
+              className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow-lg transition-colors hover:bg-white"
+              aria-label="Đóng"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X size={20} />
+            </button>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="max-h-[88vh] w-full rounded-3xl object-contain bg-white/5 shadow-2xl"
+            />
+            {selectedImage.alt && (
+              <p className="mt-4 text-center text-sm font-medium text-white/85">
+                {selectedImage.alt}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
