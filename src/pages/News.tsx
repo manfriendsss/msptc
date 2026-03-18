@@ -102,15 +102,7 @@ const newsItems = [
     image: '/ai-design.png',
     category: 'Kiến thức',
   },
-  {
-    id: 'schneider-electric',
-    title: 'MSP ký kết hợp tác chiến lược với Schneider Electric Việt Nam',
-    excerpt: 'Sự kiện đánh dấu bước tiến mới trong việc cung cấp các giải pháp quản lý năng lượng thông minh tại thị trường Việt Nam.',
-    date: '15/03/2024',
-    author: 'Ban Truyền thông',
-    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=2070',
-    category: 'Sự kiện',
-  },
+
 ];
 
 export default function News() {

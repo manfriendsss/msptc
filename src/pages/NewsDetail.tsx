@@ -355,19 +355,7 @@ const newsItems = [
       <p class="mb-6 leading-relaxed">Sự kết hợp giữa AI và mô hình thông tin công trình (BIM) cho phép quản lý vòng đời công trình trọn vẹn. Từ việc dự báo bảo trì các thiết bị máy móc trong tòa nhà đến việc quản lý ngân sách vận hành, AI giúp các chủ đầu tư kiểm soát dự án một cách khoa học và minh bạch nhất.</p>
     `,
   },
-  {
-    id: 'schneider-electric',
-    title: 'MSP ký kết hợp tác chiến lược với Schneider Electric Việt Nam',
-    date: '15/03/2024',
-    author: 'Ban Truyền thông',
-    category: 'Sự kiện',
-    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=2070',
-    excerpt: 'Sự kiện đánh dấu bước tiến mới trong việc cung cấp các giải pháp quản lý năng lượng thông minh tại thị trường Việt Nam.',
-    content: `
-      <p class="mb-6 leading-relaxed">Sự kiện ký kết hợp tác giữa MSP và Schneider Electric Việt Nam đánh dấu một cột mốc quan trọng, mở ra hướng đi mới trong việc cung cấp các giải pháp quản lý năng lượng và tự động hóa tòa nhà thông minh.</p>
-      <p class="mb-6 leading-relaxed">Theo thỏa thuận hợp tác, MSP sẽ trở thành đối tác chiến lược trong việc triển khai các dòng sản phẩm EcoStruxure của Schneider Electric, mang lại sự tối ưu hóa vận hành và tiết kiệm năng lượng bền vững cho các công trình tại Việt Nam.</p>
-    `,
-  },
+
 ];
 
 export default function NewsDetail() {
