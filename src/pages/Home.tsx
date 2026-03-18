@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center">
+      <section className="relative h-[85vh] sm:h-[90vh] flex items-start sm:items-center pt-32 sm:pt-0">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070" 
@@ -84,27 +84,27 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-start text-white -mt-20"
+            className="flex flex-col items-start text-white mt-0 sm:-mt-20"
           >
-            <span className="inline-block py-1 px-4 rounded-full bg-green-500/20 border border-green-400/30 text-green-300 text-xs font-bold uppercase tracking-widest mb-8">
+            <span className="inline-block py-1 px-4 rounded-full bg-green-500/20 border border-green-400/30 text-green-300 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6 sm:mb-8">
               MSP TECHNOLOGY & CONSTRUCTION
             </span>
-            <h1 className="text-6xl md:text-8xl font-bold leading-[1.1] mb-12 tracking-tight text-left uppercase">
+            <h1 className="text-5xl md:text-8xl font-bold leading-[1.1] mb-8 sm:mb-12 tracking-tight text-left uppercase">
               Minh bạch <br />
               <span className="text-green-400">Sáng tạo</span> <br />
               Phát triển
             </h1>
             
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-row gap-4 sm:gap-6 w-full sm:w-auto">
               <Link 
                 to="/gioi-thieu" 
-                className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all shadow-2xl hover:shadow-green-500/40 hover:-translate-y-1"
+                className="flex-1 sm:flex-none bg-green-600 hover:bg-green-700 text-white px-4 sm:px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all shadow-2xl hover:shadow-green-500/40 hover:-translate-y-1 text-sm sm:text-base whitespace-nowrap"
               >
                 Về chúng tôi
               </Link>
               <a 
                 href="tel:02432020239" 
-                className="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all hover:-translate-y-1"
+                className="flex-1 sm:flex-none bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-4 sm:px-10 py-4 rounded-xl font-bold flex items-center justify-center transition-all hover:-translate-y-1 text-sm sm:text-base whitespace-nowrap"
               >
                 Liên hệ ngay
               </a>
