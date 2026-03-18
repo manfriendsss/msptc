@@ -4,6 +4,42 @@ import { Link } from 'react-router-dom';
 
 const newsItems = [
   {
+    id: 'smart-city-trend',
+    title: 'Xu hướng đô thị thông minh (Smart City) tầm nhìn 2030',
+    excerpt: 'Khám phá các công nghệ kết nối vạn vật (IoT) và trí tuệ nhân tạo đang thay đổi bộ mặt đô thị hiện đại.',
+    date: '18/03/2024',
+    author: 'Phòng Giải pháp',
+    image: '/smart-city.png',
+    category: 'Xu hướng',
+  },
+  {
+    id: 'smart-home-2024',
+    title: 'Nhà ở thông minh: Khi công nghệ phục vụ trải nghiệm sống',
+    excerpt: 'Giải pháp Smart Home tích hợp điều khiển giọng nói và tự động hóa toàn diện cho không gian sống hiện đại.',
+    date: '17/03/2024',
+    author: 'Ban Tư vấn',
+    image: '/smart-home.png',
+    category: 'Giải pháp',
+  },
+  {
+    id: 'ai-camera-tech',
+    title: 'Công nghệ Camera AI: Tương lai của hệ thống an ninh',
+    excerpt: 'Sự kết hợp giữa thị giác máy tính và học sâu (Deep Learning) mang lại khả năng phân tích hành vi thời gian thực.',
+    date: '16/03/2024',
+    author: 'Phòng Kỹ thuật',
+    image: '/ai-camera.png',
+    category: 'Công nghệ',
+  },
+  {
+    id: 'ai-architecture',
+    title: 'Ứng dụng AI trong thiết kế xây dựng nhà ở và văn phòng',
+    excerpt: 'Cách trí tuệ nhân tạo tối ưu hóa quy trình thiết kế kiến trúc và quản lý hạ tầng tòa nhà chuyên nghiệp.',
+    date: '15/03/2024',
+    author: 'Ban Thiết kế',
+    image: '/ai-design.png',
+    category: 'Kiến thức',
+  },
+  {
     id: 'he-thong-camera-giam-sat',
     title: 'HỆ THỐNG CAMERA GIÁM SÁT',
     excerpt: 'Sơ đồ nguyên lý và giải pháp tích hợp hệ thống camera giám sát (CCTV) tổng thể cho công trình.',

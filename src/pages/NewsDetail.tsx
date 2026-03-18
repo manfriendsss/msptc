@@ -4,6 +4,90 @@ import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from '
 
 const newsItems = [
   {
+    id: 'smart-city-trend',
+    title: 'Xu xu hướng đô thị thông minh (Smart City) tầm nhìn 2030',
+    date: '18/03/2024',
+    author: 'Phòng Giải pháp',
+    category: 'Xu hướng',
+    image: '/smart-city.png',
+    excerpt: 'Khám phá các công nghệ kết nối vạn vật (IoT) và trí tuệ nhân tạo đang thay đổi bộ mặt đô thị hiện đại.',
+    content: `
+      <p class="mb-6 leading-relaxed">Đô thị thông minh (Smart City) không còn là khái niệm xa vời mà đang trở thành hiện thực tại Việt Nam. Sự kết hợp giữa hạ tầng viễn thông mạnh mẽ và trí tuệ nhân tạo (AI) đang tạo ra những không gian sống an toàn, tiện nghi và bền vững hơn.</p>
+      
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">Hạ tầng kết nối 5G và IoT</h3>
+      <p class="mb-6 leading-relaxed">Hệ thống mạng 5G đóng vai trò là mạch máu của đô thị, cho phép hàng triệu thiết bị IoT (Internet of Things) kết nối và trao đổi dữ liệu trong thời gian thực. Điều này giúp quản lý giao thông thông minh, giảm thiểu ùn tắc và tối ưu hóa hệ thống đèn đường dựa trên lưu lượng thực tế.</p>
+      
+      <img src="/smart-city.png" alt="Smart City Future" class="w-full rounded-3xl shadow-xl my-10" />
+
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">Quản lý năng lượng và môi trường</h3>
+      <p class="mb-6 leading-relaxed">Các tòa nhà thông minh được tích hợp hệ thống cảm biến đo lường mức độ tiêu thụ điện năng và chất lượng không khí. Dữ liệu này được AI phân tích để tự động điều chỉnh hệ thống HVAC (điều hòa không khí) và chiếu sáng, giúp tiết kiệm đến 30% năng lượng vận hành.</p>
+    `,
+  },
+  {
+    id: 'smart-home-2024',
+    title: 'Nhà ở thông minh: Khi công nghệ phục vụ trải nghiệm sống',
+    date: '17/03/2024',
+    author: 'Ban Tư vấn',
+    category: 'Giải pháp',
+    image: '/smart-home.png',
+    excerpt: 'Giải pháp Smart Home tích hợp điều khiển giọng nói và tự động hóa toàn diện cho không gian sống hiện đại.',
+    content: `
+      <p class="mb-6 leading-relaxed">Sống trong một ngôi nhà thông minh mang lại trải nghiệm tiện nghi hoàn toàn khác biệt. Từ việc điều khiển ánh sáng bằng giọng nói đến hệ thống an ninh nhận diện khuôn mặt người quen, công nghệ đang thực sự hiểu và phục vụ nhu cầu của từng gia chủ.</p>
+      
+      <img src="/smart-home.png" alt="Modern Smart Home Interior" class="w-full rounded-3xl shadow-xl my-10" />
+
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">Tự động hóa kịch bản sống</h3>
+      <p class="mb-6 leading-relaxed">Bạn có thể thiết lập các kịch bản như "Chào buổi sáng" (rèm mở, đèn sáng dần, nhạc nhẹ nổi lên) hoặc "Rời khỏi nhà" (tất cả khóa cửa tự đóng, hệ thống an ninh kích hoạt). Mọi thứ đều được điều khiển dễ dàng qua smartphone hoặc máy tính bảng.</p>
+      
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">An ninh thông minh đa lớp</h3>
+      <ul class="list-disc pl-6 mb-8 space-y-3 text-slate-700">
+        <li>Cảm biến vỡ kính và xâm nhập vùng cấm.</li>
+        <li>Hệ thống chuông cửa màn hình tích hợp đàm thoại từ xa.</li>
+        <li>Khóa điện tử vân tay và nhận diện khuôn mặt AI.</li>
+      </ul>
+    `,
+  },
+  {
+    id: 'ai-camera-tech',
+    title: 'Công nghệ Camera AI: Tương lai của hệ thống an ninh',
+    date: '16/03/2024',
+    author: 'Phòng Kỹ thuật',
+    category: 'Công nghệ',
+    image: '/ai-camera.png',
+    excerpt: 'Sự kết hợp giữa thị giác máy tính và học sâu (Deep Learning) mang lại khả năng phân tích hành vi thời gian thực.',
+    content: `
+      <p class="mb-6 leading-relaxed">Sự chuyển mình từ camera giám sát truyền thống sang Camera AI đã tạo ra một cuộc cách mạng trong ngành an ninh. Thay vì chỉ ghi lại sự kiện đã xảy ra, Camera AI có khả năng ngăn chặn sự cố trước khi chúng kịp bắt đầu.</p>
+      
+      <img src="/ai-camera.png" alt="AI Camera Interface" class="w-full rounded-3xl shadow-xl my-10" />
+
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">Nhận diện đối tượng siêu chính xác</h3>
+      <p class="mb-6 leading-relaxed">Sử dụng thuật toán Deep Learning, camera có thể phân biệt chính xác con người, động vật, phương tiện và cả các vật dụng cầm tay. Điều này giúp loại bỏ hoàn toàn báo động giả do lá rơi hay thời tiết gây ra.</p>
+      
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">Phân tích hành vi thời gian thực</h3>
+      <p class="mb-6 leading-relaxed">Hệ thống có thể phát hiện các hành vi bất thường như đột nhập, chạy trốn hoặc đánh nhau để gửi thông báo tức thời đến đội ngũ bảo vệ, giúp phản ứng nhanh chóng và hiệu quả.</p>
+    `,
+  },
+  {
+    id: 'ai-architecture',
+    title: 'Ứng dụng AI trong thiết kế xây dựng nhà ở và văn phòng',
+    date: '15/03/2024',
+    author: 'Ban Thiết kế',
+    category: 'Kiến thức',
+    image: '/ai-design.png',
+    excerpt: 'Cách trí tuệ nhân tạo tối ưu hóa quy trình thiết kế kiến trúc và quản lý hạ tầng tòa nhà chuyên nghiệp.',
+    content: `
+      <p class="mb-6 leading-relaxed">Trong lĩnh vực kiến trúc và xây dựng, AI đang giúp các kiến trúc sư thực hiện những ý tưởng táo bạo mà trước đây rất khó để tính toán chính xác. Công nghệ thiết kế dựa trên dữ liệu (Data-driven Design) đang trở thành tiêu chuẩn mới.</p>
+      
+      <img src="/ai-design.png" alt="AI in Architectural Design" class="w-full rounded-3xl shadow-xl my-10" />
+
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">Tối ưu hóa không gian và cấu kiện</h3>
+      <p class="mb-6 leading-relaxed">AI có thể mô phỏng hàng nghìn kịch bản bố trí nội thất để tìm ra phương án tối ưu nhất về ánh sáng tự nhiên và luồng gió. Đối với kết cấu, AI giúp tính toán khối lượng vật liệu chính xác, giảm thiểu lãng phí và tăng độ bền cho công trình.</p>
+      
+      <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">Mô hình BIM thông minh</h3>
+      <p class="mb-6 leading-relaxed">Sự kết hợp giữa AI và mô hình thông tin công trình (BIM) cho phép quản lý vòng đời công trình trọn vẹn, từ giai đoạn thiết kế, thi công đến vận hành bảo trì tòa nhà tự động.</p>
+    `,
+  },
+  {
     id: 'he-thong-camera-giam-sat',
     title: 'HỆ THỐNG CAMERA GIÁM SÁT',
     date: '15/02/2022',
