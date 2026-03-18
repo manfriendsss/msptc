@@ -1,42 +1,81 @@
 import { motion } from 'motion/react';
-import { Cpu, Zap, Radio, Building, Settings, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { 
+  Camera, 
+  Share2, 
+  Volume2, 
+  Phone, 
+  Video, 
+  Lock, 
+  FileSearch, 
+  Zap, 
+  Lightbulb, 
+  Wind,
+  CheckCircle2 
+} from 'lucide-react';
+
+const products = [
+  {
+    title: 'CCTV – Camera giám sát',
+    description: 'Chuyên cung cấp và lắp đặt hệ thống Camera giám sát từ các thương hiệu hàng đầu thế giới.',
+    icon: Camera,
+    features: ['Thương hiệu: Avigilon, Hanwha Vision, Axis, Pelco', 'Công nghệ AI phân tích hình ảnh', 'Giám sát 24/7 từ xa', 'Độ phân giải cực cao'],
+  },
+  {
+    title: 'Truyền dẫn quang',
+    description: 'Cung cấp đầy đủ các vật tư và thiết bị cho hệ thống kết nối cáp quang và truyền dẫn dữ liệu.',
+    icon: Share2,
+    features: ['Cáp quang đơn mốt/đa mốt', 'Bộ chuyển đổi (Media Converter)', 'Hộp phối quang (ODF)', 'Dây nhảy quang chuyên dụng'],
+  },
+  {
+    title: 'Âm thanh thông báo',
+    description: 'Giải pháp hệ thống âm thanh thông báo công cộng (Public Address System) cho tòa nhà và nhà máy.',
+    icon: Volume2,
+    features: ['Loa âm trần/treo tường', 'Amply công suất cao', 'Hệ thống IP Audio', 'Giải pháp thông báo khẩn cấp'],
+  },
+  {
+    title: 'Hệ thống Mạng - Điện thoại',
+    description: 'Tư vấn và cung cấp thiết bị hạ tầng mạng, hệ thống điện thoại nội bộ chuyên nghiệp cho doanh nghiệp.',
+    icon: Phone,
+    features: ['Switch/Router công nghiệp', 'Tổng đài điện thoại IP', 'Wifi chuyên dụng diện rộng', 'Tủ Rack và phụ kiện'],
+  },
+  {
+    title: 'Body Camera',
+    description: 'Các loại camera đeo người chuyên dụng cho lực lượng an ninh và giám sát hiện trường thực tế.',
+    icon: Video,
+    features: ['Ghi hình Full HD/4K', 'Chống va đập IP67', 'Pin dung lượng lớn', 'Kết nối 4G/Wifi'],
+  },
+  {
+    title: 'Kiểm soát vào ra',
+    description: 'Giải pháp quản lý ra vào (Access Control) an toàn bằng thẻ, vân tay hoặc công nghệ nhận diện khuôn mặt.',
+    icon: Lock,
+    features: ['Nhận diện khuôn mặt AI', 'Kiểm soát bãi xe thông minh', 'Máy chấm công hiện đại', 'Cửa xoay Tripod/Màn chắn'],
+  },
+];
 
 const services = [
   {
-    title: 'Tư vấn giải pháp công nghệ',
-    description: 'Cung cấp các giải pháp công nghệ tiên tiến, tối ưu hóa chi phí và hiệu quả vận hành cho các công trình xây dựng hiện đại.',
-    icon: Cpu,
-    features: ['Khảo sát thực tế', 'Thiết kế hệ thống', 'Dự toán kinh tế', 'Tư vấn kỹ thuật'],
+    title: 'Tư vấn thiết kế hệ thống điện nhẹ',
+    description: 'Khảo sát, tư vấn và lập thiết kế kỹ thuật cho toàn bộ hệ thống điện nhẹ (ELV) của công trình.',
+    icon: FileSearch,
+    features: ['Khảo sát hiện trường chi tiết', 'Thiết kế sơ đồ nguyên lý', 'Dự toán vật tư chính xác', 'Tư vấn tiêu chuẩn kỹ thuật'],
   },
   {
-    title: 'Thi công hệ thống cơ điện (M&E)',
-    description: 'Lắp đặt chuyên nghiệp các hệ thống điện động lực, chiếu sáng, điều hòa không khí và thông gió cho tòa nhà, nhà máy.',
+    title: 'Triển khai hệ thống điện nhẹ ELV',
+    description: 'Thi công lắp đặt và cấu hình hệ thống điện nhẹ theo tiêu chuẩn kỹ thuật cao và tiến độ cam kết.',
     icon: Zap,
-    features: ['Hệ thống điện nhẹ', 'Hệ thống HVAC', 'PCCC & Cấp thoát nước', 'Trạm biến áp'],
+    features: ['Lắp đặt chuyên nghiệp', 'Cấu hình hệ thống phần mềm', 'Đào tạo chuyển giao', 'Bảo trì sau lắp đặt'],
   },
   {
-    title: 'Hệ thống thông tin liên lạc',
-    description: 'Triển khai hạ tầng mạng, tổng đài, âm thanh thông báo và các giải pháp truyền thông tích hợp.',
-    icon: Radio,
-    features: ['Mạng LAN/WAN', 'Hệ thống Camera giám sát', 'Âm thanh công cộng', 'Kiểm soát vào ra'],
+    title: 'Giải pháp cho các hệ thống ELV',
+    description: 'Đưa ra các giải pháp công nghệ tích hợp giúp quản lý tòa nhà và nhà máy thông minh, an toàn hơn.',
+    icon: Lightbulb,
+    features: ['Tích hợp hệ thống BMS', 'Quản lý năng lượng tập trung', 'Giải pháp an ninh tổng thể', 'Tự động hóa tòa nhà'],
   },
   {
-    title: 'Giải pháp tòa nhà thông minh',
-    description: 'Tích hợp các công nghệ tự động hóa BMS, iBMS giúp quản lý tòa nhà thông minh, tiết kiệm năng lượng và an toàn.',
-    icon: Building,
-    features: ['Tự động hóa chiếu sáng', 'Kiểm soát năng lượng', 'Quản lý an ninh tập trung', 'Giao diện điều khiển trực quan'],
-  },
-  {
-    title: 'Bảo trì & Vận hành hệ thống',
-    description: 'Dịch vụ bảo dưỡng định kỳ, sửa chữa và vận hành hệ thống kỹ thuật đảm bảo hoạt động liên tục và ổn định.',
-    icon: Settings,
-    features: ['Bảo trì định kỳ', 'Sửa chữa khẩn cấp 24/7', 'Tối ưu hóa vận hành', 'Đào tạo chuyển giao'],
-  },
-  {
-    title: 'Cung cấp thiết bị công nghệ',
-    description: 'Phân phối các thiết bị kỹ thuật, công nghệ từ các thương hiệu hàng đầu thế giới với đầy đủ CO/CQ.',
-    icon: ShieldCheck,
-    features: ['Thiết bị điện tử', 'Vật tư xây lắp', 'Phần mềm quản lý', 'Linh kiện thay thế'],
+    title: 'Hệ thống điều hòa không khí (HVAC)',
+    description: 'Dịch vụ trọn gói từ tư vấn, thiết kế, cung cấp thiết bị đến lắp đặt hệ thống điều hòa không khí.',
+    icon: Wind,
+    features: ['Hệ thống điều hòa trung tâm VRV/VRF', 'Hệ thống Chiller', 'Thông gió và xử lý không khí', 'Bảo trì hệ thống HVAC'],
   },
 ];
 
@@ -68,39 +107,83 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-300 max-w-3xl mx-auto"
           >
-            Giải pháp toàn diện cho mọi nhu cầu về công nghệ và xây lắp kỹ thuật.
+            Giải pháp công nghệ và xây lắp kỹ thuật toàn diện cho mọi công trình hiện đại.
           </motion.p>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Products Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {services.map((service, idx) => (
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Danh mục Sản phẩm</h2>
+            <div className="w-20 h-1.5 bg-green-600 mx-auto rounded-full" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-slate-50 p-10 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-2xl transition-all group"
+                className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-2xl transition-all group"
               >
-                <div className="w-16 h-16 bg-green-600 text-white rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                  <service.icon size={32} />
+                <div className="w-14 h-14 bg-green-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <product.icon size={28} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 mb-8 leading-relaxed">
-                  {service.description}
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{product.title}</h3>
+                <p className="text-slate-600 mb-6 text-sm leading-relaxed">
+                  {product.description}
                 </p>
-                <ul className="space-y-3">
-                  {service.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center text-sm text-slate-700 font-medium">
-                      <CheckCircle2 size={16} className="text-green-600 mr-2" />
+                <ul className="space-y-2">
+                  {product.features.map((feature, fIdx) => (
+                    <li key={fIdx} className="flex items-center text-xs text-slate-700">
+                      <CheckCircle2 size={14} className="text-green-600 mr-2 shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Dịch vụ Chuyên nghiệp</h2>
+            <div className="w-20 h-1.5 bg-green-600 mx-auto rounded-full" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((service, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-10 rounded-3xl border border-slate-200 hover:shadow-xl transition-all group flex flex-col md:flex-row gap-8"
+              >
+                <div className="w-16 h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                  <service.icon size={32} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {service.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-center text-sm text-slate-700">
+                        <CheckCircle2 size={16} className="text-green-600 mr-2 shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
