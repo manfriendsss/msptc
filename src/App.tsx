@@ -5,6 +5,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Partners from './pages/Partners';
 import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
 import Contact from './pages/Contact';
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/dich-vu" element={<Services />} />
           <Route path="/doi-tac" element={<Partners />} />
           <Route path="/tin-tuc" element={<News />} />
+          <Route path="/tin-tuc/:id" element={<NewsDetail />} />
           <Route path="/lien-he" element={<Contact />} />
         </Routes>
       </Layout>
