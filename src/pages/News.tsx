@@ -18,7 +18,7 @@ const newsItems = [
     excerpt: 'Giới thiệu các công nghệ tiên tiến trên camera Avigilon dựa trên nền tảng H4 giúp tối ưu băng thông và tăng cường khả năng giám sát.',
     date: '28/11/2018',
     author: 'Phòng Kỹ thuật',
-    image: '/camera-avigilon.jpg',
+    image: '/camera-avigilon.png',
     category: 'Công nghệ',
   },
   {
@@ -27,7 +27,7 @@ const newsItems = [
     excerpt: 'Video demo camera Avigilon với các tính năng thông minh như tự động nhận diện người và phương tiện.',
     date: '30/11/2018',
     author: 'Ban Truyền thông',
-    image: '/demo-camera.jpg',
+    image: '/demo-camera.png',
     category: 'Video Dự án',
   },
   {

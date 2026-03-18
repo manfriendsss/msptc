@@ -39,13 +39,18 @@ const newsItems = [
     date: '28/11/2018',
     author: 'Phòng Kỹ thuật',
     category: 'Công nghệ',
-    image: '/camera-avigilon.jpg',
+    image: '/camera-avigilon.png',
     excerpt: 'Giới thiệu các công nghệ tiên tiến trên camera Avigilon dựa trên nền tảng H4 giúp tối ưu băng thông và tăng cường khả năng giám sát.',
     content: `
       <p class="mb-6 leading-relaxed">Dòng Camera Avigilon đại diện cho phân khúc an ninh cao cấp, hội tụ những công nghệ xử lý hình ảnh và trí tuệ nhân tạo (AI) hàng đầu hiện nay. Việc ứng dụng nền tảng phần cứng H4 không chỉ cải thiện độ sắc nét mà còn thay đổi hoàn toàn cách chúng ta tương tác với hệ thống camera giám sát.</p>
       
       <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">1. Công nghệ HDSM™ (High Definition Stream Management)</h3>
       <p class="mb-6 leading-relaxed">Đây là "vũ khí bí mật" của Avigilon giúp giải quyết bài toán băng thông khi sử dụng camera độ phân giải lớn (từ 5K đến 7K). Thay vì gửi toàn bộ khung hình nặng nề, HDSM chỉ truyền tải những phần hình ảnh mà người dùng đang quan sát trên màn hình, giúp hệ thống vận hành mượt mà ngay cả trên hạ tầng mạng cơ bản.</p>
+
+      <div class="my-10">
+        <img src="/avi-1.png" alt="Công nghệ nén SmartCodec" class="w-full rounded-3xl shadow-lg border border-slate-100" />
+        <p class="text-center text-sm text-slate-500 mt-4">Công nghệ quản lý băng thông thông minh HDSM™</p>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 my-12">
         <div class="space-y-4">
@@ -59,7 +64,8 @@ const newsItems = [
       </div>
 
       <div class="my-10">
-        <img src="/camera-avigilon.jpg" alt="Dòng sản phẩm Avigilon cao cấp" class="w-full rounded-[40px] shadow-2xl" />
+        <img src="/avi-2.png" alt="Quản lý lưu trữ thông minh" class="w-full rounded-3xl shadow-lg border border-slate-100" />
+        <p class="text-center text-sm text-slate-500 mt-4">Biểu đồ so sánh hiệu suất nén SmartCodec</p>
       </div>
 
       <h3 class="text-2xl font-bold text-slate-900 mt-10 mb-6">2. Trí tuệ nhân tạo tự học (Self-Learning Analytics)</h3>
@@ -81,7 +87,7 @@ const newsItems = [
     date: '30/11/2018',
     author: 'Ban Truyền thông',
     category: 'Video Dự án',
-    image: '/demo-camera.jpg',
+    image: '/demo-camera.png',
     excerpt: 'Video demo camera Avigilon với các tính năng thông minh như tự động nhận diện người và phương tiện.',
     content: `
       <p class="mb-6 leading-relaxed">Để giúp khách hàng có cái nhìn trực quan nhất về sức mạnh của công nghệ AI trên camera Avigilon, MSP xin giới thiệu các đoạn video demo thực tế tại hiện trường. Các tính năng như nhận diện đối tượng và phân tích hành vi được thực hiện hoàn toàn tự động bởi camera.</p>
@@ -91,7 +97,7 @@ const newsItems = [
         <iframe 
           width="100%" 
           height="100%" 
-          src="https://www.youtube.com/embed/R6wR-2UOn1k" 
+          src="https://www.youtube.com/embed/BV4dWXQqALE" 
           title="YouTube video player" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -104,7 +110,7 @@ const newsItems = [
         <iframe 
           width="100%" 
           height="100%" 
-          src="https://www.youtube.com/embed/7u8sIsznt_k" 
+          src="https://www.youtube.com/embed/c856QUSIm7Q" 
           title="YouTube video player" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
