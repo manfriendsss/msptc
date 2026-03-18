@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Shield, Cpu, Network, Zap } from 'lucide-react';
+import { X, Shield, Cpu, Network, Zap } from 'lucide-react';
 
 const partners = [
   { 
@@ -17,7 +17,6 @@ const partners = [
         <li>Aruba ClearPass Policy Manager (Bảo mật truy cập)</li>
         <li>Aruba Central (Quản lý mạng trên đám mây)</li>
       </ul>
-      <p>MSP là đối tác tích hợp hệ thống chính thức của Aruba tại Việt Nam, chuyên tư vấn và triển khai hạ tầng mạng không dây cho các tòa nhà văn phòng và khu công nghiệp.</p>
     `
   },
   { 
@@ -34,7 +33,6 @@ const partners = [
         <li>High Definition Stream Management (HDSM™)</li>
         <li>Avigilon Control Center (VMS ACC 7)</li>
       </ul>
-      <p>MSP hiện là nhà phân phối và triển khai các giải pháp an ninh cao cấp của Avigilon cho các dự án trọng điểm, yêu cầu tính an ninh nghiêm ngặt.</p>
     `
   },
   { 
@@ -51,7 +49,6 @@ const partners = [
         <li>Cisco Meraki (Quản lý hạ tầng qua đám mây)</li>
         <li>Giải pháp bảo mật Cisco Firepower</li>
       </ul>
-      <p>MSP đồng hành cùng Cisco mang đến hạ tầng mạng vững chắc cho các tổ chức tài chính, ngân hàng và cơ quan chính phủ.</p>
     `
   },
   { 
@@ -108,8 +105,7 @@ const partners = [
     category: 'Hệ thống HVAC',
     description: 'Nagakawa là tập đoàn kinh tế đa ngành, nổi tiếng với các sản phẩm điện lạnh và điều hòa không khí công nghiệp.',
     detailedInfo: `
-      <p class="mb-4">Nagakawa cung cấp các hệ thống điều hòa trung tâm VRF và cục bộ cho các công trình cao ốc, khách sạn và nhà máy sản xuất.</p>
-      <p>MSP hợp tác cùng Nagakawa trong các dự án cơ điện (M&E), triển khai hệ thống thông gió và điều hòa không khí tổng thể.</p>
+      <p class="mb-4">Nagakawa cung cấp các hệ thống điều hòa trung tâm VRF và cục bộ cho các công trình cao ốc, khách sạn và nhà máy sản xuất, tập trung vào hiệu suất năng lượng và độ bền bỉ.</p>
     `
   },
   { 
@@ -118,16 +114,15 @@ const partners = [
     category: 'Viễn thông',
     description: 'Tập đoàn Bưu chính Viễn thông Việt Nam là doanh nghiệp cung cấp hạ tầng viễn thông và CNTT hàng đầu tại Việt Nam.',
     detailedInfo: `
-      <p class="mb-4">VNPT cung cấp mạng lưới Internet băng rộng, dịch vụ di động Vinaphone và các giải pháp chuyển đổi số cho Chính phủ và doanh nghiệp.</p>
-      <p>MSP là đối tác chiến lược của VNPT trong việc triển khai hạ tầng viễn thông cho các dự án bất động sản và khu đô thị thông minh.</p>
+      <p class="mb-4">VNPT cung cấp mạng lưới Internet băng rộng, dịch vụ di động Vinaphone và các giải pháp chuyển đổi số toàn diện cho hạ tầng đô thị thông minh.</p>
     `
   },
   { 
     name: 'OEC', 
     logo: '/KH-OEC.jpg', 
     category: 'Đối tác chiến lược',
-    description: 'OEC Group là đối tác quan trọng trong việc triển khai các dự án khoa học công nghệ và hạ tầng thông tin.',
-    detailedInfo: `<p>MSP và OEC cùng phối hợp thực hiện các dự án nghiên cứu, ứng dụng công nghệ mới vào quản lý tài nguyên và an toàn năng lượng.</p>`
+    description: 'OEC Group là đơn vị chuyên sâu trong việc triển khai các dự án khoa học công nghệ, hạ tầng viễn thông và chuyển đổi số.',
+    detailedInfo: `<p>OEC tập trung vào các giải pháp nghiên cứu và ứng dụng công nghệ cao trong quản trị tài nguyên và an toàn năng lượng quy mô lớn.</p>`
   },
   { 
     name: 'Hikvision', 
@@ -150,7 +145,7 @@ const partners = [
     logo: '/fpt.jpg', 
     category: 'Công nghệ & Viễn thông',
     description: 'Tập đoàn FPT dẫn đầu trong lĩnh vực dịch vụ CNTT, phần mềm và viễn thông tại Việt Nam và khu vực.',
-    detailedInfo: `<p>MSP phối hợp cùng FPT Telecom và FPT IS trong việc tích hợp hệ thống phần mềm quản lý và truyền dẫn internet cho các đối tác khách hàng khối doanh nghiệp.</p>`
+    detailedInfo: `<p>FPT cung cấp hệ sinh thái giải pháp số toàn diện, từ hạ tầng truyền dẫn Internet, dịch vụ Cloud đến các phần mềm quản trị doanh nghiệp chuyên sâu.</p>`
   },
   { 
     name: 'Polycom', 
