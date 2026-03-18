@@ -9,7 +9,7 @@ const newsItems = [
     excerpt: 'Sơ đồ nguyên lý và giải pháp tích hợp hệ thống camera giám sát (CCTV) tổng thể cho công trình.',
     date: '15/02/2022',
     author: 'Ban Dự án',
-    image: '/sdnl-cctv.jpg',
+    image: '/ai-street-camera.png',
     category: 'Sơ đồ nguyên lý',
   },
   {

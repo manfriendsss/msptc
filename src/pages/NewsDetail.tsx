@@ -9,7 +9,7 @@ const newsItems = [
     date: '15/02/2022',
     author: 'Ban Dự án',
     category: 'Sơ đồ nguyên lý',
-    image: '/sdnl-cctv.jpg',
+    image: '/ai-street-camera.png',
     excerpt: 'Sơ đồ nguyên lý và giải pháp tích hợp hệ thống camera giám sát (CCTV) tổng thể cho công trình.',
     content: `
       <p class="mb-6 leading-relaxed">Hệ thống Camera giám sát (CCTV) hiện đại không chỉ đơn thuần là việc ghi hình, mà là một hệ thống hạ tầng an ninh phức hợp đòi hỏi tính ổn định và khả năng xử lý dữ liệu lớn. MSP tự hào mang đến giải pháp sơ đồ nguyên lý tối ưu, giúp khách hàng quản lý an ninh một cách toàn diện từ trung tâm điều hành đến từng mắt camera đầu cuối.</p>
