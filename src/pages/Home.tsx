@@ -3,6 +3,8 @@ import { motion, useMotionValue, useTransform, animate, useInView } from 'motion
 import { ArrowRight, Shield, Zap, TrendingUp, CheckCircle2, Users, Building2, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const EASE_OUT_EXPO: [number, number, number, number] = [0.33, 1, 0.68, 1];
+
 function CountUp({ to, duration = 2 }: { to: number; duration?: number }) {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -14,7 +16,7 @@ function CountUp({ to, duration = 2 }: { to: number; duration?: number }) {
     if (isInView) {
       const controls = animate(count, to, { 
         duration,
-        ease: [0.33, 1, 0.68, 1] // Custom easeOutExpo
+        ease: EASE_OUT_EXPO
       });
       return controls.stop;
     }
@@ -66,7 +68,6 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden">
-      {/* Hero Section */}
       <section className="relative h-[85vh] sm:h-[90vh] flex items-start sm:items-center pt-32 sm:pt-0">
         <div className="absolute inset-0 z-0">
           <img 
@@ -112,13 +113,12 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Floating Stats Card */}
         <div className="absolute left-0 right-0 -bottom-24 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-[3rem] shadow-[0_30px_70px_rgba(0,0,0,0.08)] border border-slate-100/50 p-10 md:p-14 grid grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, idx) => (
                 <motion.div 
-                  key={idx} 
+                  key={stat.label} 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -141,10 +141,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Spacing for floating card */}
       <div className="h-32 bg-slate-50" />
 
-      {/* Core Values */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -156,9 +154,9 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {coreValues.map((value, idx) => (
+            {coreValues.map((value) => (
               <motion.div
-                key={idx}
+                key={value.title}
                 whileHover={{ y: -10 }}
                 className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 transition-all hover:shadow-xl group"
               >
@@ -175,7 +173,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Preview */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -208,8 +205,8 @@ export default function Home() {
                   'Cung cấp sản phẩm chất lượng cao',
                   'Thi công lắp đặt chuyên nghiệp',
                   'Đảm bảo tiến độ và an toàn lao động'
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center space-x-3 text-slate-700 font-medium">
+                ].map((item) => (
+                  <li key={item} className="flex items-center space-x-3 text-slate-700 font-medium">
                     <CheckCircle2 className="text-green-600" size={20} />
                     <span>{item}</span>
                   </li>
@@ -226,7 +223,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-24 bg-green-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />

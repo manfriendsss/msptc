@@ -1,16 +1,16 @@
 import { motion } from 'motion/react';
-import { 
-  Camera, 
-  Share2, 
-  Volume2, 
-  Phone, 
-  Video, 
-  Lock, 
-  FileSearch, 
-  Zap, 
-  Lightbulb, 
+import {
+  Camera,
+  Share2,
+  Volume2,
+  Phone,
+  Video,
+  Lock,
+  FileSearch,
+  Zap,
+  Lightbulb,
   Wind,
-  CheckCircle2 
+  CheckCircle2,
 } from 'lucide-react';
 
 const products = [
@@ -79,13 +79,19 @@ const services = [
   },
 ];
 
+const processSteps = [
+  { step: '01', title: 'Tiếp nhận & Khảo sát', desc: 'Lắng nghe nhu cầu và khảo sát thực tế công trình.' },
+  { step: '02', title: 'Tư vấn & Thiết kế', desc: 'Đề xuất giải pháp tối ưu và thiết kế chi tiết.' },
+  { step: '03', title: 'Thi công & Lắp đặt', desc: 'Triển khai thi công đúng tiến độ và tiêu chuẩn.' },
+  { step: '04', title: 'Nghiệm thu & Bàn giao', desc: 'Kiểm tra kỹ thuật và bàn giao hướng dẫn sử dụng.' },
+];
+
 export default function Services() {
   return (
     <div>
-      {/* Header */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=2070"
             alt="Services Background"
             className="w-full h-full object-cover"
@@ -94,14 +100,14 @@ export default function Services() {
           <div className="absolute inset-0 bg-slate-900/80" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-bold mb-6 text-green-400"
           >
             Sản phẩm & Dịch vụ
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -112,7 +118,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Products Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -122,7 +127,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, idx) => (
               <motion.div
-                key={idx}
+                key={product.title}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -133,12 +138,10 @@ export default function Services() {
                   <product.icon size={28} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{product.title}</h3>
-                <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-                  {product.description}
-                </p>
+                <p className="text-slate-600 mb-6 text-sm leading-relaxed">{product.description}</p>
                 <ul className="space-y-2">
-                  {product.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center text-xs text-slate-700">
+                  {product.features.map((feature) => (
+                    <li key={feature} className="flex items-center text-xs text-slate-700">
                       <CheckCircle2 size={14} className="text-green-600 mr-2 shrink-0" />
                       {feature}
                     </li>
@@ -150,7 +153,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="py-24 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -160,7 +162,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, idx) => (
               <motion.div
-                key={idx}
+                key={service.title}
                 initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -172,12 +174,10 @@ export default function Services() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
+                  <p className="text-slate-600 mb-6 leading-relaxed">{service.description}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {service.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-center text-sm text-slate-700">
+                    {service.features.map((feature) => (
+                      <div key={feature} className="flex items-center text-sm text-slate-700">
                         <CheckCircle2 size={16} className="text-green-600 mr-2 shrink-0" />
                         {feature}
                       </div>
@@ -190,7 +190,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Process Section */}
       <section className="py-24 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -200,13 +199,8 @@ export default function Services() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { step: '01', title: 'Tiếp nhận & Khảo sát', desc: 'Lắng nghe nhu cầu và khảo sát thực tế công trình.' },
-              { step: '02', title: 'Tư vấn & Thiết kế', desc: 'Đề xuất giải pháp tối ưu và thiết kế chi tiết.' },
-              { step: '03', title: 'Thi công & Lắp đặt', desc: 'Triển khai thi công đúng tiến độ và tiêu chuẩn.' },
-              { step: '04', title: 'Nghiệm thu & Bàn giao', desc: 'Kiểm tra kỹ thuật và bàn giao hướng dẫn sử dụng.' },
-            ].map((item, idx) => (
-              <div key={idx} className="relative">
+            {processSteps.map((item) => (
+              <div key={item.step} className="relative">
                 <div className="text-6xl font-black text-white/10 mb-4">{item.step}</div>
                 <h4 className="text-xl font-bold mb-3">{item.title}</h4>
                 <p className="text-green-50 text-sm leading-relaxed">{item.desc}</p>

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Target, Eye, Heart, ShieldCheck, Users2, Lightbulb } from 'lucide-react';
+import { Target, Eye, ShieldCheck, Users2, Lightbulb } from 'lucide-react';
 
 const values = [
   {
@@ -24,13 +24,12 @@ export default function About() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ['start end', 'end start'],
   });
   const y = useTransform(scrollYProgress, [0, 1], [-120, 120]);
 
   return (
     <div className="pb-24">
-      {/* Header */}
       <section className="bg-slate-900 py-24 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -59,7 +58,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="py-24 bg-white" ref={containerRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
@@ -93,7 +91,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Vision & Mission */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
             <div className="bg-slate-50 p-12 rounded-3xl border border-slate-100">
               <div className="w-16 h-16 bg-green-600 text-white rounded-2xl flex items-center justify-center mb-8">
@@ -115,14 +112,13 @@ export default function About() {
             </div>
           </div>
 
-          {/* Why Choose Us */}
           <div className="text-center mb-20">
             <h2 className="text-xs font-bold text-green-600 uppercase tracking-[0.3em] mb-4">Tại sao chọn MSP?</h2>
             <h3 className="text-4xl font-bold text-slate-900">Cam kết của chúng tôi</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, idx) => (
-              <div key={idx} className="text-center space-y-6">
+            {values.map((value) => (
+              <div key={value.title} className="text-center space-y-6">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-50 text-green-600">
                   <value.icon size={36} />
                 </div>

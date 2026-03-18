@@ -104,14 +104,11 @@ const newsItems = [
   },
 
 ];
+const [featuredNews, ...gridNews] = newsItems;
 
 export default function News() {
-  const featuredNews = newsItems[0];
-  const gridNews = newsItems.slice(1);
-
   return (
     <div className="pb-24">
-      {/* Header */}
       <section className="relative py-32 overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0 opacity-40">
           <img 
@@ -140,7 +137,6 @@ export default function News() {
         </div>
       </section>
 
-      {/* Featured News */}
       <section className="py-24 bg-white -mt-16 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to={`/tin-tuc/${featuredNews.id}`} className="block group">
@@ -168,13 +164,12 @@ export default function News() {
         </div>
       </section>
 
-      {/* News Grid */}
       <section className="pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {gridNews.map((item, idx) => (
               <motion.div
-                key={idx}
+                key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

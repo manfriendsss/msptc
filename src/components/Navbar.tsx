@@ -19,9 +19,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const nextScrolled = window.scrollY > 20;
+      setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
     };
-    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -49,7 +52,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -62,14 +64,14 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-600 hover:text-green-600 transition-colors"
+              aria-label={isOpen ? 'Đóng menu' : 'Mở menu'}
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -77,7 +79,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -99,7 +100,6 @@ export default function Navbar() {
                   <ChevronRight size={16} className="text-slate-300" />
                 </Link>
               ))}
-
             </div>
           </motion.div>
         )}
