@@ -33,8 +33,12 @@ export default function NewsDetail() {
       return;
     }
 
-    const images = Array.from(container.querySelectorAll('img'));
+    const images = container.querySelectorAll('img');
     images.forEach((image) => {
+      if (!(image instanceof HTMLImageElement)) {
+        return;
+      }
+
       image.classList.add('cursor-zoom-in', 'transition-transform', 'duration-300', 'hover:scale-[1.01]');
     });
   }, [article]);
