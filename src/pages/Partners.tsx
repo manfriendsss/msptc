@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Shield, Cpu, Network, Zap } from 'lucide-react';
 import { partners } from '../data/partnersData';
@@ -41,7 +41,7 @@ export default function Partners() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-bold text-green-400 mb-6"
           >
-            Äá»‘i tÃ¡c & KhÃ¡ch hÃ ng
+            Đối tác & Khách hàng
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function Partners() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-300 max-w-3xl mx-auto"
           >
-            Sá»± tin tÆ°á»Ÿng cá»§a cÃ¡c Ä‘á»‘i tÃ¡c cÃ´ng nghá»‡ hÃ ng Ä‘áº§u lÃ  minh chá»©ng cho nÄƒng lá»±c vÃ  uy tÃ­n cá»§a MSP trÃªn thá»‹ trÆ°á»ng.
+            Sự tin tưởng của các đối tác công nghệ hàng đầu là minh chứng cho năng lực và uy tín của MSP trên thị trường.
           </motion.p>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function Partners() {
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 uppercase tracking-tight">Há»‡ sinh thÃ¡i Ä‘á»‘i tÃ¡c</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 uppercase tracking-tight">Hệ sinh thái đối tác</h2>
             <div className="w-20 h-1 bg-green-500 mx-auto rounded-full"></div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -132,7 +132,7 @@ export default function Partners() {
                 <div className="space-y-8">
                   <div className="bg-green-50/50 p-6 rounded-3xl border border-green-100">
                     <h4 className="flex items-center text-green-800 font-bold mb-3">
-                      <Shield className="mr-2" size={18} /> Giá»›i thiá»‡u chung
+                      <Shield className="mr-2" size={18} /> Giới thiệu chung
                     </h4>
                     <p className="text-slate-700 leading-relaxed italic">
                       {selectedPartner.description}
@@ -149,13 +149,13 @@ export default function Partners() {
               <div className="p-8 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
                 <div className="flex space-x-4">
                   <div className="flex items-center text-xs text-slate-400 font-bold uppercase tracking-tight">
-                    <Cpu size={14} className="mr-1 text-green-500" /> CÃ´ng nghá»‡
+                    <Cpu size={14} className="mr-1 text-green-500" /> Công nghệ
                   </div>
                   <div className="flex items-center text-xs text-slate-400 font-bold uppercase tracking-tight">
-                    <Network size={14} className="mr-1 text-green-500" /> TÃ­ch há»£p
+                    <Network size={14} className="mr-1 text-green-500" /> Tích hợp
                   </div>
                   <div className="flex items-center text-xs text-slate-400 font-bold uppercase tracking-tight">
-                    <Zap size={14} className="mr-1 text-green-500" /> Hiá»‡u quáº£
+                    <Zap size={14} className="mr-1 text-green-500" /> Hiệu quả
                   </div>
                 </div>
                 <button 
@@ -163,7 +163,7 @@ export default function Partners() {
                   onClick={() => setSelectedPartner(null)}
                   className="px-6 py-3 bg-slate-900 text-white text-sm font-bold rounded-2xl hover:bg-green-600 transition-colors shadow-lg shadow-slate-200"
                 >
-                  ÄÃ³ng láº¡i
+                  Đóng lại
                 </button>
               </div>
             </motion.div>

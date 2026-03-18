@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState, type MouseEvent } from 'react';
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin, X } from 'lucide-react';
@@ -58,8 +58,8 @@ export default function NewsDetail() {
   if (!article) {
     return (
       <div className="py-32 text-center font-primary">
-        <h2 className="text-2xl font-bold">KhÃ´ng tÃ¬m tháº¥y bÃ i viáº¿t</h2>
-        <Link to="/tin-tuc" className="text-green-600 mt-4 inline-block font-bold">Quay láº¡i Tin tá»©c</Link>
+        <h2 className="text-2xl font-bold">Không tìm thấy bài viết</h2>
+        <Link to="/tin-tuc" className="text-green-600 mt-4 inline-block font-bold">Quay lại Tin tức</Link>
       </div>
     );
   }
@@ -72,7 +72,7 @@ export default function NewsDetail() {
             to="/tin-tuc" 
             className="inline-flex items-center text-green-400 text-sm font-bold mb-8 hover:text-green-300 transition-colors"
           >
-            <ArrowLeft size={16} className="mr-2" /> QUAY Láº I TIN Tá»¨C
+            <ArrowLeft size={16} className="mr-2" /> QUAY LẠI TIN TỨC
           </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -119,7 +119,7 @@ export default function NewsDetail() {
             />
             
             <div className="mt-16 pt-8 border-t border-slate-100 flex items-center justify-between">
-              <div className="font-bold text-slate-900">Chia sáº» bÃ i viáº¿t:</div>
+              <div className="font-bold text-slate-900">Chia sẻ bài viết:</div>
               <div className="flex space-x-3">
                 <button className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-green-600 hover:text-white transition-all shadow-sm">
                   <Facebook size={18} />
@@ -139,7 +139,7 @@ export default function NewsDetail() {
 
           <div className="w-full lg:w-80 shrink-0 space-y-12">
             <div className="bg-slate-50 rounded-[32px] p-8 border border-slate-100 sticky top-32">
-              <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest border-b border-green-500 pb-2 inline-block">Tin liÃªn quan</h4>
+              <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest border-b border-green-500 pb-2 inline-block">Tin liên quan</h4>
               <div className="space-y-8">
                 {newsItems.filter(item => item.id !== id).slice(0, 4).map(item => (
                   <Link key={item.id} to={`/tin-tuc/${item.id}`} className="block group">
@@ -156,7 +156,7 @@ export default function NewsDetail() {
       </div>
 
       {selectedImage && (
-        <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Xem áº£nh lá»›n">
+        <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn">
           <div
             className="absolute inset-0 bg-slate-950/85 backdrop-blur-sm"
             onClick={() => setSelectedImage(null)}
@@ -168,7 +168,7 @@ export default function NewsDetail() {
             <button
               type="button"
               className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-800 shadow-lg transition-colors hover:bg-white"
-              aria-label="ÄÃ³ng"
+              aria-label="Đóng"
               onClick={() => setSelectedImage(null)}
             >
               <X size={20} />
